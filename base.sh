@@ -15,22 +15,20 @@ check_cli() {
   fi
 }
 
+# echo help message
 help_demo() {
     echo -e "
 USAGE:
   ./run <command>
 
 COMMANDS:
-  init         启动部署服务
-  stop         关闭服务，所有服务下线
-  start        stop 后启动服务
-  restart      重启服务
-  ps           查看服务运行情况
-  logs <name>  查看指定服务的日志
-
+  init         initialize your application
+  version      print cli version
+  help         print help message
 "
 }
 
+# case to define you cli tool
 case_demo() {
 case "$1" in
   "test")
@@ -43,3 +41,12 @@ case "$1" in
 esac
 
 }
+
+
+
+
+check_cli ping    && echo "print this msg if ping is exit"
+check_cli ping    || echo "print this msg if ping is not exit"
+
+check_cli pingxxx && echo "print this msg if pingxxx is esit"
+check_cli pingxxx || echo "print this msg if pingxxx is not esit"
